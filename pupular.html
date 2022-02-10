@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Split</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+    }
+
+    a {
+      text-decoration: none;
+      background-color: #4a4a4a;
+      color: #fafafa;
+      height: 32px;
+      margin: 5px;
+      text-align: center;
+      padding: 5px;
+      border-radius: 10px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    var popularSites = [
+      { url: 'https://reactjs.org/', name: 'reactjs' },
+      { url: 'https://v2.vuejs.org/v2/guide/', name: 'vuejs' },
+      { url: 'https://angular.io/', name: 'angular' },
+      { url: 'https://www.typescriptlang.org/', name: 'typescript' },
+      { url: 'https://reactnative.dev/', name: 'React Native' },
+      { url: 'https://redux.js.org/', name: 'Redux JS' },
+      { url: 'https://nextjs.org/', name: 'Next JS' },
+      { url: 'https://react-redux.js.org/', name: 'react-redux' },
+      { url: 'https://axios-http.com/docs/intro', name: 'Next JS' },
+    ];
+
+    var container = document.getElementById('container');
+    var fragment = document.createDocumentFragment();
+    popularSites.forEach(function (site) {
+      var anchor = document.createElement('a');
+      anchor.href = site.url;
+      anchor.textContent = site.name;
+      fragment.appendChild(anchor);
+    });
+    container.appendChild(fragment);
+  </script>
+</body>
+
+</html>
